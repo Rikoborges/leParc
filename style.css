@@ -1,0 +1,294 @@
+/* LE PARC - VALENCE 
+    Design System: High-End Tobacco & Royal Gold
+*/
+
+:root {
+    --primary-brown: #1a0f0d; /* Marrom Tabaco Profundo */
+    --gold: #d4af37;          /* Dourado Clássico */
+    --gold-vibrant: #e6b800;  /* Dourado de Alto Contraste para Preços */
+    --gold-light: #f1e5ac;    /* Brilho Dourado */
+    --bg-page: #fdfaf7;       /* Papel Crema */
+    --bg-alternate: #f4f1ee;  /* Divisão Visual de Seções */
+    --white: #ffffff;
+    --text-dark: #121212;
+    --text-muted: #555555;
+    --price-bg: #1a0f0d;      /* Fundo para destacar o preço */
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --radius: 20px;
+}
+
+/* 1. RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    background-color: var(--bg-page);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* 2. HEADER PREMIUM */
+.main-header {
+    background: linear-gradient(135deg, var(--primary-brown) 0%, #2d1b18 100%);
+    color: var(--gold);
+    padding: 60px 20px 40px;
+    text-align: center;
+    border-bottom: 5px solid var(--gold);
+    box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+}
+
+.brand-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    letter-spacing: 5px;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 6px;
+    color: var(--white);
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+.divider-gold {
+    width: 60px;
+    height: 2px;
+    background: var(--gold);
+    margin: 20px auto;
+}
+
+.address {
+    font-size: 0.8rem;
+    color: var(--gold-light);
+    font-weight: 300;
+}
+
+/* 3. SELETOR DE IDIOMAS */
+.lang-selector {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.lang-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1.5px solid var(--gold);
+    color: var(--gold);
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lang-btn:active {
+    background: var(--gold);
+    color: var(--primary-brown);
+    transform: scale(0.9);
+}
+
+/* 4. CONTAINER E DIVISÕES DE FUNDO */
+.menu-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Alternância de cor nas seções para ritmo visual */
+.menu-container > *:nth-child(even) {
+    background-color: var(--bg-alternate);
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* 5. ANIMAÇÃO REVEAL (O PULO) */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* 6. CARDS DE PRODUTO */
+.category-header {
+    margin: 50px 0 25px;
+    text-align: center;
+}
+
+.category-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    color: var(--primary-brown);
+    position: relative;
+    display: inline-block;
+}
+
+.menu-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.photo-frame {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-color: #eee;
+    transition: transform 0.6s ease;
+}
+
+.menu-card:active .photo-frame {
+    transform: scale(1.1); /* Zoom ao tocar */
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-title .name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-brown);
+}
+
+/* 7. PREÇOS COM ALTO CONTRASTE */
+.price {
+    background: var(--price-bg);
+    color: var(--gold-vibrant);
+    padding: 5px 12px;
+    border-radius: 8px;
+    font-weight: 800;
+    font-size: 1rem;
+    box-shadow: 3px 3px 0px var(--gold);
+    white-space: nowrap;
+}
+
+/* 8. GRID DE SALGADOS (Lado a Lado) */
+.items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.small-card .photo-frame { height: 160px; }
+.small-card .name { font-size: 1.1rem; }
+.small-card .description { font-size: 0.85rem; }
+
+/* 9. LISTAS SIMPLES (Cafés/Bebidas/Tabaco) */
+.simple-list-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 15px 25px;
+    margin-bottom: 35px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--gold); /* Destaque lateral */
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.list-item:last-child { border-bottom: none; }
+
+.list-item span:first-child {
+    font-weight: 600;
+    color: var(--primary-brown);
+}
+
+/* 10. SEÇÃO TABACARIA & LEGAL */
+.tabac-services {
+    background: #f0ede9;
+    padding: 40px 20px;
+    border-radius: var(--radius);
+    text-align: center;
+    margin: 60px 0;
+    border: 1px dashed var(--gold);
+}
+
+.legal-box {
+    border: 2px solid #000;
+    padding: 12px 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 20px 0;
+    background: #fff;
+}
+
+.health-warning {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+/* 11. FOOTER PREMIUM */
+.footer-legal {
+    background: var(--primary-brown);
+    color: #d1d1d1;
+    padding: 60px 25px 40px;
+    text-align: center;
+}
+
+.footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 30px auto;
+    width: 80%;
+}
+
+.legal-links a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 10px;
+    font-size: 0.85rem;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+    .brand-logo { font-size: 2.6rem; }
+    .items-grid { grid-template-columns: 1fr; } /* Empilha em telas muito finas */
+}

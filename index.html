@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta name="description" content="Découvrez Le Parc à Valence : Bar, Tabac et Presse. Cocktails signature comme la Caïpirinha, spécialités brésiliennes (Coxinha, Kébbé) et services FDJ.">
+<meta name="keywords" content="Bar Valence, Tabac Valence, Presse, FDJ, Cocktails, Caïpirinha, Coxinha, Kébbé, Café Valence, Restaurant Brésilien">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Le Parc - Bar & Tabac Premium à Valence">
+<meta property="og:description" content="Cocktails, Tabac, Presse et spécialités brésiliennes maison. Venez nous rendre visite au 37 Av. Gambetta.">
+<meta property="og:image" content="https://seu-link.github.io/assets/caipirinha.jpg"> 
+<meta property="og:url" content="https://seu-link.github.io/">
+
+<meta name="theme-color" content="#1a0f0d">
+    <title>Le Parc - Bar & Tabac Valence</title>
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/apple-icon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="opacity: 0; transition: opacity 0.5s ease-in-out;">
+
+    <header class="main-header">
+        <div class="header-content">
+            <h1 class="brand-logo">LE PARC</h1>
+            <h2 class="subtitle" id="main-subtitle">BAR & TABAC</h2>
+            <div class="divider-gold"></div>
+            <p class="address">37 Av. Gambetta • 26000 Valence</p>
+        </div>
+        
+        <nav class="lang-selector">
+            <button onclick="setLanguage('fr')" class="lang-btn" id="btn-fr">FR 🇫🇷</button>
+            <button onclick="setLanguage('pt')" class="lang-btn" id="btn-pt">PT 🇧🇷</button>
+            <button onclick="setLanguage('ar')" class="lang-btn" id="btn-ar">AR 🇸🇦</button>
+        </nav>
+    </header>
+
+    <main class="menu-container">
+        
+        <div class="category-header reveal">
+            <h3 id="cat-cocktails">COCKTAILS SIGNATURE</h3>
+        </div>
+
+        <article class="menu-card reveal">
+            <div class="photo-frame" style="background-image: url('assets/caipirinha.jpg');"></div>
+            <div class="card-content">
+                <div class="card-title">
+                    <span class="name" id="item-caipirinha-name">Caïpirinha Classique</span>
+                    <span class="origin">🇧🇷</span>
+                </div>
+                <p class="description" id="item-caipirinha-desc">Recette traditionnelle : Cachaça, citron vert frais et sucre de canne.</p>
+            </div>
+        </article>
+
+        <article class="menu-card reveal">
+            <div class="photo-frame" style="background-image: url('assets/mojito.jpg');"></div>
+            <div class="card-content">
+                <div class="card-title">
+                    <span class="name" id="item-mojito-name">Mojito Cubain</span>
+                    <span class="origin">🍃</span>
+                </div>
+                <p class="description" id="item-mojito-desc">Rhum blanc, menthe fraîche du jardin, citron vert et eau gazeuse.</p>
+            </div>
+        </article>
+
+        <div class="category-header reveal">
+            <h3 id="cat-food">AMUSE-BOUCHES MAISON</h3>
+        </div>
+
+        <div class="items-grid">
+            <article class="menu-card small-card reveal">
+                <div class="photo-frame" style="background-image: url('assets/coxinha.jpg'); height: 160px;"></div>
+                <div class="card-content">
+                    <div class="card-title">
+                        <span class="name" id="item-coxinha-name">Coxinha</span>
+                        <span class="origin">🇧🇷</span>
+                    </div>
+                    <p class="description" id="item-coxinha-desc">Poulet effiloché croustillant.</p>
+                </div>
+            </article>
+
+            <article class="menu-card small-card reveal">
+                <div class="photo-frame" style="background-image: url('assets/quibe.jpg'); height: 160px;"></div>
+                <div class="card-content">
+                    <div class="card-title">
+                        <span class="name" id="item-quibe-name">Kébbé</span>
+                        <span class="origin">🇱🇧</span>
+                    </div>
+                    <p class="description" id="item-quibe-desc">Bœuf et blé concassé.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="category-header reveal">
+            <h3 id="cat-coffee">CAFÉTÉRIE</h3>
+        </div>
+        <div class="simple-list-card reveal">
+            <div class="list-item">
+                <span id="label-espresso">Espresso</span>
+                <span class="price">2,00€</span>
+            </div>
+            <div class="list-item">
+                <span id="label-allonge">Café Allongé</span>
+                <span class="price">2,20€</span>
+            </div>
+            <div class="list-item">
+                <span id="label-capuccino">Capuccino</span>
+                <span class="price">3,50€</span>
+            </div>
+        </div>
+
+        <div class="category-header reveal">
+            <h3 id="cat-drinks">BOISSONS & BIÈRES</h3>
+        </div>
+        <div class="simple-list-card reveal">
+            <div class="list-item">
+                <span id="label-pression">Bière Pression (25cl)</span>
+                <span class="price">3,50€</span>
+            </div>
+            <div class="list-item">
+                <span id="label-soda">Softs / Sodas</span>
+                <span class="price">3,50€</span>
+            </div>
+            <div class="list-item">
+                <span id="label-water">Eau Minérale</span>
+                <span class="price">2,50€</span>
+            </div>
+        </div>
+
+        <div class="category-header reveal">
+            <h3 id="cat-tabac-games">TABAC & JEUX</h3>
+        </div>
+        <div class="simple-list-card reveal">
+            <div class="list-item">
+                <span id="label-cigarettes">Cigarettes & Tabac</span>
+                <span class="dot">●</span>
+            </div>
+            <div class="list-item">
+                <span id="label-fdj">Jeux FDJ / Grattage</span>
+                <span class="dot">●</span>
+            </div>
+           
+        </div>
+
+        <section class="tabac-services reveal">
+            <p class="service-label" id="tabac-label">TABAC •  FDJ</p>
+            <div class="legal-box" id="legal-mineur">INTERDIT AUX MINEURS (-18)</div>
+            <p class="health-warning" id="health-text">Fumer tue. L'abus d'alcool est dangereux pour la santé.</p>
+        </section>
+
+    </main>
+
+    <footer class="footer-legal">
+        <div class="footer-content">
+            <p class="footer-brand"><strong>LE PARC - VALENCE</strong></p>
+            <p class="footer-address">37 Avenue Gambetta, 26000 Valence</p>
+            <p id="footer-hours" class="footer-hours">Ouvert du Mardi au Dimanche</p>
+            
+            <hr class="footer-divider">
+
+            <div class="mentions-legales">
+                <p><strong>Éditeur:</strong> Le Parc Valence | <strong>SIRET:</strong> [Seu SIRET Aqui]</p>
+                <p id="footer-privacy-text" class="privacy-text">Conformément au RGPD, ce site ne collecte aucune donnée personnelle.</p>
+            </div>
+
+            <div class="legal-links">
+                <a href="#" id="link-legal">Mentions Légales</a> | 
+                <a href="tel:+33000000000" id="link-contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
