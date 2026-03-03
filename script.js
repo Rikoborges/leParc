@@ -1,6 +1,6 @@
 /**
  * LE PARC - VALENCE 
- * Engine de Tradução e Animação de Movimento (v4.0)
+ * Engine de Tradução e Animação de Movimento (v4.1)
  */
 
 const translations = {
@@ -37,7 +37,8 @@ const translations = {
         health: "Fumer tue. L'abus d'alcool est dangereux pour la santé.",
         hours: "Ouvert du Mardi au Dimanche",
         privacy: "Conformément au RGPD, ce site ne collecte aucune donnée personnelle.",
-        legal_link: "Mentions Légales"
+        legal_link: "Mentions Légales",
+        contact_link: "Contact"
     },
     pt: {
         subtitle: "BAR E TABACARIA",
@@ -72,7 +73,8 @@ const translations = {
         health: "Fumar mata. O abuso de álcool é perigoso para a saúde.",
         hours: "Aberto de Terça a Domingo",
         privacy: "De acordo com o RGPD, este site não coleta dados pessoais.",
-        legal_link: "Termos Legais"
+        legal_link: "Termos Legais",
+        contact_link: "Contato"
     },
     ar: {
         subtitle: "بار و تبغ",
@@ -107,18 +109,13 @@ const translations = {
         health: "التدخين يقتل. الإفراط في تناول الكحول يضر بالصحة.",
         hours: "مفتوح من الثلاثاء إلى الأحد",
         privacy: "وفقًا لـ RGPD، لا يجمع هذا الموقع أي بيانات شخصية.",
-        legal_link: "الإشعارات القانونية"
+        legal_link: "الإشعارات القانونية",
+        contact_link: "اتصل بنا"
     }
 };
 
-/**
- * MOTOR DE TRADUÇÃO
- */
 function setLanguage(lang) {
-    // Feedback tátil (vibração leve)
     if (navigator.vibrate) navigator.vibrate(10);
-
-    // Fade suave na troca
     document.body.style.opacity = "0";
 
     setTimeout(() => {
@@ -153,7 +150,8 @@ function setLanguage(lang) {
             'health-text': t.health,
             'footer-hours': t.hours,
             'footer-privacy-text': t.privacy,
-            'link-legal': t.legal_link
+            'link-legal': t.legal_link,
+            'link-contact': t.contact_link
         };
 
         Object.keys(elements).forEach(id => {
@@ -161,48 +159,35 @@ function setLanguage(lang) {
             if (el) el.innerText = elements[id];
         });
 
-        // Suporte a leitura Árabe (RTL)
+        // Suporte a leitura Árabe (RTL) e alinhamento de texto
         document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+        document.body.style.textAlign = (lang === 'ar') ? 'right' : 'left';
         document.documentElement.lang = lang;
 
-        // Salva preferência
         localStorage.setItem('leparc_lang', lang);
-
         document.body.style.opacity = "1";
-        
-        // Reinicia a detecção de movimento para os novos textos
         handleReveal();
     }, 250);
 }
 
-/**
- * LÓGICA DE MOVIMENTO (REVEAL ON SCROLL)
- */
 function handleReveal() {
     const reveals = document.querySelectorAll('.reveal');
     const windowHeight = window.innerHeight;
 
     reveals.forEach(el => {
         const elementTop = el.getBoundingClientRect().top;
-        const revealPoint = 100; // Distância para ativar
-
+        const revealPoint = 100;
         if (elementTop < windowHeight - revealPoint) {
             el.classList.add('active');
         }
     });
 }
 
-/**
- * INICIALIZAÇÃO
- */
 document.addEventListener('DOMContentLoaded', () => {
-    // Detecta idioma salvo ou do sistema do cliente
     const saved = localStorage.getItem('leparc_lang');
     const browser = navigator.language.split('-')[0];
     const defaultLang = translations[saved] ? saved : (translations[browser] ? browser : 'fr');
 
     setLanguage(defaultLang);
-    
-    // Ativa o scroll listener
     window.addEventListener('scroll', handleReveal);
 });
