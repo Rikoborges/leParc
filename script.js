@@ -174,6 +174,24 @@ function handleReveal() {
     const reveals = document.querySelectorAll('.reveal');
     const windowHeight = window.innerHeight;
 
+    // Mostrar/Esconder botão conforme o scroll
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('backToTop');
+    if (window.pageYOffset > 300) {
+        btn.style.display = "flex";
+    } else {
+        btn.style.display = "none";
+    }
+});
+
+// Ação de clique para subir suavemente
+document.getElementById('backToTop').addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
     reveals.forEach(el => {
         const elementTop = el.getBoundingClientRect().top;
         const revealPoint = 100;
