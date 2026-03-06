@@ -1,211 +1,176 @@
-/**
- * LE PARC - VALENCE 
- * Engine de Tradução e Animação de Movimento (v4.1)
- */
+/* LE PARC - VALENCE 
+    Engine: Translation & Interaction v5.0
+*/
 
 const translations = {
     fr: {
-        subtitle: "BAR & TABAC",
-        cat_cocktails: "COCKTAILS SIGNATURE",
-        cat_food: "AMUSE-BOUCHES MAISON",
-        cat_coffee: "CAFÉTÉRIE",
-        cat_drinks: "BOISSONS & BIÈRES",
-        cat_tabac_games: "TABAC & JEUX",
-        
-        caip_n: "Caïpirinha Classique",
-        caip_d: "Recette traditionnelle : Cachaça, citron vert frais et sucre de canne.",
-        moj_n: "Mojito Cubain",
-        moj_d: "Rhum blanc, menthe fraîche du jardin, citron vert et eau gazeuse.",
-        
-        cox_n: "Coxinha de Frango",
-        cox_d: "Poulet effiloché croustillant.",
-        quibe_n: "Kébbé Traditionnel",
-        quibe_d: "Bœuf haché et blé concassé.",
-
-        espresso: "Espresso",
-        allonge: "Café Allongé",
-        capuccino: "Capuccino",
-        pression: "Bière Pression (25cl)",
-        soda: "Softs / Sodas",
-        water: "Eau Minérale",
-        cigarettes: "Cigarettes & Tabac",
-        fdj: "Jeux FDJ / Grattage",
-        presse: "Presse & Magazines",
-
-        tabac: "TABAC • PRESSE • FDJ",
-        age: "INTERDIT AUX MINEURS (-18)",
-        health: "Fumer tue. L'abus d'alcool est dangereux pour la santé.",
-        hours: "Ouvert du Mardi au Dimanche",
-        privacy: "Conformément au RGPD, ce site ne collecte aucune donnée personnelle.",
-        legal_link: "Mentions Légales",
-        contact_link: "Contact"
+        'main-subtitle': 'BAR & TABAC',
+        'cat-cocktails': 'COCKTAILS SIGNATURE',
+        'cat-food': 'AMUSE-BOUCHES MAISON',
+        'cat-coffee': 'CAFÉTÉRIA',
+        'cat-drinks': 'BOISSONS & BIÈRES',
+        'cat-vins': 'SÉLECTION DE VINS',
+        'cat-tabac-games': 'TABAC & JEUX',
+        // Itens de destaque
+        'item-caipirinha-name': '🍹 Caïpirinha Classique',
+        'item-mojito-name': '🍃 Mojito Cubain',
+        'item-coxinha-name': '🍗 Coxinha',
+        'item-quibe-name': '🧆 Kébbé',
+        // Lista de Cafetaria
+        'label-espresso': '☕ Espresso',
+        'label-allonge': '☕ Café Allongé',
+        'label-noisette': '☕ Café Noisette',
+        'label-chocolat': '🍫 Chocolat Chaud',
+        'label-the': '🫖 Thé / Infusion',
+        // Lista de Bebidas
+        'label-pression': '🍺 Bière Pression (25cl)',
+        'label-pression-50': '🍺 Bière Pression (50cl)',
+        'label-tourtel': '🍺 Tourtel (Sans Alcool)',
+        'label-soda': '🥤 Softs / Sodas',
+        'label-water': '💧 Eau Minérale (50cl)',
+        'label-water-gaz': '🫧 Eau Gazeuse',
+        'label-diabolo': '🥤 Diabolo',
+        'label-limonade': '🍋 Limonade / Sirop',
+        'label-vins': '🍷 Verre de Vin (B/R/R)',
+        // Outros
+        'label-cigarettes': '🚬 Cigarettes & Tabac',
+        'label-fdj': '🍀 Jeux FDJ / Grattage',
+        'tabac-label': 'TABAC • FDJ • PRESSE',
+        'footer-hours': 'Ouvert du Mardi au Dimanche'
     },
     pt: {
-        subtitle: "BAR E TABACARIA",
-        cat_cocktails: "COQUETÉIS DE ASSINATURA",
-        cat_food: "PETISCOS CASEIROS",
-        cat_coffee: "CAFETERIA",
-        cat_drinks: "BEBIDAS & CERVEJAS",
-        cat_tabac_games: "TABACO & JOGOS",
-
-        caip_n: "Caipirinha Clássica",
-        caip_d: "Receita tradicional: Cachaça, limão taiti fresco e açúcar de cana.",
-        moj_n: "Mojito Cubano",
-        moj_d: "Rum branco, hortelã fresca, limão e água com gás.",
-
-        cox_n: "Coxinha de Frango",
-        cox_d: "Frango desfiado crocante.",
-        quibe_n: "Quibe Caseiro",
-        quibe_d: "Carne bovina e trigo integral.",
-
-        espresso: "Café Expresso",
-        allonge: "Café Carioca",
-        capuccino: "Capuccino",
-        pression: "Chope (25cl)",
-        soda: "Refrigerantes",
-        water: "Água Mineral",
-        cigarettes: "Cigarros & Tabaco",
-        fdj: "Jogos da Sorte / Raspadinhas",
-        presse: "Revistas & Jornais",
-
-        tabac: "TABACO • JOGOS • CONVENIÊNCIA",
-        age: "PROIBIDO PARA MENORES (-18)",
-        health: "Fumar mata. O abuso de álcool é perigoso para a saúde.",
-        hours: "Aberto de Terça a Domingo",
-        privacy: "De acordo com o RGPD, este site não coleta dados pessoais.",
-        legal_link: "Termos Legais",
-        contact_link: "Contato"
+        'main-subtitle': 'BAR & TABACO',
+        'cat-cocktails': 'COCKTAILS ASSINATURA',
+        'cat-food': 'PETISCOS CASEIROS',
+        'cat-coffee': 'CAFETERIA',
+        'cat-drinks': 'BEBIDAS & CERVEJAS',
+        'cat-vins': 'SELEÇÃO DE VINHOS',
+        'cat-tabac-games': 'TABACO & JOGOS',
+        // Itens de destaque
+        'item-caipirinha-name': '🍹 Caipirinha Clássica',
+        'item-mojito-name': '🍃 Mojito Cubano',
+        'item-coxinha-name': '🍗 Coxinha de Frango',
+        'item-quibe-name': '🧆 Quibe de Carne',
+        // Lista de Cafetaria
+        'label-espresso': '☕ Café Expresso',
+        'label-allonge': '☕ Café Longo',
+        'label-noisette': '☕ Café Noisette',
+        'label-chocolat': '🍫 Chocolate Quente',
+        'label-the': '🫖 Chá / Infusão',
+        // Lista de Bebidas
+        'label-pression': '🍺 Cerveja Imperial (25cl)',
+        'label-pression-50': '🍺 Cerveja Caneca (50cl)',
+        'label-tourtel': '🍺 Tourtel (Sem Álcool)',
+        'label-soda': '🥤 Refrigerantes',
+        'label-water': '💧 Água Mineral (50cl)',
+        'label-water-gaz': '🫧 Água com Gás',
+        'label-diabolo': '🥤 Diabolo',
+        'label-limonade': '🍋 Limonada / Xarope',
+        'label-vins': '🍷 Taça de Vinho (B/R/R)',
+        // Outros
+        'label-cigarettes': '🚬 Cigarros & Tabaco',
+        'label-fdj': '🍀 Jogos FDJ / Raspadinhas',
+        'tabac-label': 'TABACO • FDJ • IMPRENSA',
+        'footer-hours': 'Aberto de Terça a Domingo'
     },
     ar: {
-        subtitle: "بار و تبغ",
-        cat_cocktails: "كوكتيلات مميزة",
-        cat_food: "مقبلات منزلية",
-        cat_coffee: "كافيتيريا",
-        cat_drinks: "مشروبات وبيرة",
-        cat_tabac_games: "تبغ وألعاب",
-
-        caip_n: "كايبيرينيا كلاسيكية",
-        caip_d: "الوصفة التقليدية: كاشاسا، ليمون طازج وسكر قصب.",
-        moj_n: "موهيتو كوبي",
-        moj_d: "روم أبيض، نعناع طازج، ليمون ومياه غازية.",
-
-        cox_n: "كوشينيا دجاج",
-        cox_d: "دجاج مفروم مقرمش.",
-        quibe_n: "كبة تقليدية",
-        quibe_d: "لحم بقري وبرغل.",
-
-        espresso: "إسبريسو",
-        allonge: "قهوة طويلة",
-        capuccino: "كابتشينو",
-        pression: "بيرة برميل (25cl)",
-        soda: "مشروبات غازية",
-        water: "مياه معدنية",
-        cigarettes: "سجائر وتبغ",
-        fdj: "ألعاب اليانصيب",
-        presse: "صحف ومجلات",
-
-        tabac: "تبغ • صحافة • ألعاب اليانصيب",
-        age: "ممنوع للقاصرين (-18)",
-        health: "التدخين يقتل. الإفراط في تناول الكحول يضر بالصحة.",
-        hours: "مفتوح من الثلاثاء إلى الأحد",
-        privacy: "وفقًا لـ RGPD، لا يجمع هذا الموقع أي بيانات شخصية.",
-        legal_link: "الإشعارات القانونية",
-        contact_link: "اتصل بنا"
+        'main-subtitle': 'بار و تبغ',
+        'cat-cocktails': 'كوكتيلات مميزة',
+        'cat-food': 'مقبلات منزلية',
+        'cat-coffee': 'كافتيريا',
+        'cat-drinks': 'مشروبات وبيرة',
+        'cat-vins': 'مجموعة النبيذ',
+        'cat-tabac-games': 'تبغ وألعاب',
+        // Itens
+        'item-caipirinha-name': '🍹 كايبيرينيا كلاسيك',
+        'item-mojito-name': '🍃 موهيتو كوبي',
+        'item-coxinha-name': '🍗 كوشينيا دجاج',
+        'item-quibe-name': '🧆 كبة لحم',
+        // Lista de Cafetaria
+        'label-espresso': '☕ إسبريسو',
+        'label-allonge': '☕ قهوة طويلة',
+        'label-noisette': '☕ نوزيت',
+        'label-chocolat': '🍫 شوكولاتة ساخنة',
+        'label-the': '🫖 شاي',
+        // Lista de Bebidas
+        'label-pression': '🍺 بيرة (٢٥ سل)',
+        'label-pression-50': '🍺 بيرة (٥٠ سل)',
+        'label-tourtel': '🍺 تورتيل',
+        'label-soda': '🥤 مشروبات غازية',
+        'label-water': '💧 مياه معدنية',
+        'label-water-gaz': '🫧 مياه غازية',
+        'label-diabolo': '🥤 ديابولو',
+        'label-limonade': '🍋 ليموناضة',
+        'label-vins': '🍷 كأس نبيذ',
+        // Outros
+        'label-cigarettes': '🚬 سجائر وتبغ',
+        'label-fdj': '🍀 ألعاب الحظ',
+        'tabac-label': 'تبغ • ألعاب • صحف',
+        'footer-hours': 'مفتوح من الثلاثاء إلى الأحد'
     }
 };
 
+/* FUNÇÃO DE TROCA DE IDIOMA */
 function setLanguage(lang) {
-    if (navigator.vibrate) navigator.vibrate(10);
-    document.body.style.opacity = "0";
+    localStorage.setItem('preferredLang', lang);
+    document.documentElement.lang = lang;
+    
+    // Suporte para leitura da direita para esquerda no Árabe
+    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
 
-    setTimeout(() => {
-        const t = translations[lang];
-
-        const elements = {
-            'main-subtitle': t.subtitle,
-            'cat-cocktails': t.cat_cocktails,
-            'cat-food': t.cat_food,
-            'cat-coffee': t.cat_coffee,
-            'cat-drinks': t.cat_drinks,
-            'cat-tabac-games': t.cat_tabac_games,
-            'item-caipirinha-name': t.caip_n,
-            'item-caipirinha-desc': t.caip_d,
-            'item-mojito-name': t.moj_n,
-            'item-mojito-desc': t.moj_d,
-            'item-coxinha-name': t.cox_n,
-            'item-coxinha-desc': t.cox_d,
-            'item-quibe-name': t.quibe_n,
-            'item-quibe-desc': t.quibe_d,
-            'label-espresso': t.espresso,
-            'label-allonge': t.allonge,
-            'label-capuccino': t.capuccino,
-            'label-pression': t.pression,
-            'label-soda': t.soda,
-            'label-water': t.water,
-            'label-cigarettes': t.cigarettes,
-            'label-fdj': t.fdj,
-            'label-presse': t.presse,
-            'tabac-label': t.tabac,
-            'legal-mineur': t.age,
-            'health-text': t.health,
-            'footer-hours': t.hours,
-            'footer-privacy-text': t.privacy,
-            'link-legal': t.legal_link,
-            'link-contact': t.contact_link
-        };
-
-        Object.keys(elements).forEach(id => {
-            const el = document.getElementById(id);
-            if (el) el.innerText = elements[id];
-        });
-
-        // Suporte a leitura Árabe (RTL) e alinhamento de texto
-        document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-        document.body.style.textAlign = (lang === 'ar') ? 'right' : 'left';
-        document.documentElement.lang = lang;
-
-        localStorage.setItem('leparc_lang', lang);
-        document.body.style.opacity = "1";
-        handleReveal();
-    }, 250);
-}
-
-function handleReveal() {
-    const reveals = document.querySelectorAll('.reveal');
-    const windowHeight = window.innerHeight;
-
-    // Mostrar/Esconder botão conforme o scroll
-window.addEventListener('scroll', () => {
-    const btn = document.getElementById('backToTop');
-    if (window.pageYOffset > 300) {
-        btn.style.display = "flex";
-    } else {
-        btn.style.display = "none";
-    }
-});
-
-// Ação de clique para subir suavemente
-document.getElementById('backToTop').addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-    reveals.forEach(el => {
-        const elementTop = el.getBoundingClientRect().top;
-        const revealPoint = 100;
-        if (elementTop < windowHeight - revealPoint) {
-            el.classList.add('active');
+    Object.keys(translations[lang]).forEach(id => {
+        const element = document.getElementById(id);
+        if (element) {
+            // Se for o subtítulo principal ou cabeçalhos, usamos animação de fade
+            element.style.opacity = 0;
+            setTimeout(() => {
+                element.textContent = translations[lang][id];
+                element.style.opacity = 1;
+            }, 150);
         }
     });
+
+    // Atualiza o estado visual dos botões de idioma
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    const activeBtn = document.getElementById(`btn-${lang}`);
+    if (activeBtn) activeBtn.classList.add('active');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem('leparc_lang');
-    const browser = navigator.language.split('-')[0];
-    const defaultLang = translations[saved] ? saved : (translations[browser] ? browser : 'fr');
+/* INTERSECTION OBSERVER (ANIMAÇÃO AO SCROLL) */
+const revealOnScroll = () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Anima apenas uma vez
+            }
+        });
+    }, { threshold: 0.15 });
 
-    setLanguage(defaultLang);
-    window.addEventListener('scroll', handleReveal);
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+};
+
+/* INICIALIZAÇÃO */
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('preferredLang') || 'fr';
+    setLanguage(savedLang);
+    
+    // Revela o corpo da página com suavidade
+    document.body.style.opacity = '1';
+    
+    revealOnScroll();
+
+    // Botão Voltar ao Topo
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 400) {
+            backToTopBtn.style.display = 'flex';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 });

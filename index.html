@@ -3,30 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <meta name="description" content="Découvrez Le Parc à Valence : Bar, Tabac et Presse. Cocktails signature comme la Caïpirinha, spécialités brésiliennes (Coxinha, Kébbé) et services FDJ.">
-    <meta name="keywords" content="Bar Valence, Tabac Valence, Presse, FDJ, Cocktails, Caïpirinha, Coxinha, Kébbé, Café Valence, Restaurant Brésilien">
-    
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Découvrez Le Parc à Valence : Bar, Tabac et Presse. Cocktails signature, spécialités brésiliennes et services FDJ.">
     <meta name="theme-color" content="#1a0f0d">
 
     <title>Le Parc - Bar & Tabac Valence</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/caipirinha.webp">
-
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="apple-touch-icon" href="assets/favicon.png">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Le Parc - Bar & Tabac Premium à Valence">
-    <meta property="og:description" content="Cocktails, Tabac, Presse et spécialités brésiliennes maison. Venez nous rendre visite au 37 Av. Gambetta.">
-    <meta property="og:image" content="https://le-parc.vercel.app/assets/caipirinha.jpg"> 
-    <meta property="og:url" content="https://le-parc.vercel.app/">
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="opacity: 0; transition: opacity 0.5s ease-in-out;">
@@ -36,10 +21,18 @@
             <h1 class="brand-logo">LE PARC</h1>
             <h2 class="subtitle" id="main-subtitle">BAR & TABAC</h2>
             <div class="divider-gold"></div>
-            <p class="address">37 Av. Gambetta • 26000 Valence</p>
+            
+            <p class="address">
+                <a href="https://maps.app.goo.gl/E9h8orwtJZ3bQ5AM7" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fa-solid fa-location-dot" style="color: #4285F4;"></i> 37 Av. Gambetta • 26000 Valence
+                </a>
+            </p>
         </div>
         
         <nav class="lang-selector">
+            <a href="https://www.facebook.com/profile.php?id=100063520111111" target="_blank" class="social-btn-top">
+                <i class="fab fa-facebook"></i>
+            </a>
             <button onclick="setLanguage('fr')" class="lang-btn" id="btn-fr">FR 🇫🇷</button>
             <button onclick="setLanguage('pt')" class="lang-btn" id="btn-pt">PT 🇧🇷</button>
             <button onclick="setLanguage('ar')" class="lang-btn" id="btn-ar">AR 🇸🇦</button>
@@ -48,141 +41,158 @@
 
     <main class="menu-container">
         
-        <div class="category-header reveal">
-            <h3 id="cat-cocktails">COCKTAILS SIGNATURE</h3>
-        </div>
-
-        <article class="menu-card reveal">
-            <div class="photo-frame" style="background-image: url('/assets/caipirinha.webp');"></div>
-            <div class="card-content">
-                <div class="card-title">
-                    <span class="name" id="item-caipirinha-name">Caïpirinha Classique</span>
-                    <span class="origin">🇧🇷</span>
-                </div>
-                <p class="description" id="item-caipirinha-desc">Recette traditionnelle : Cachaça, citron vert frais et sucre de canne.</p>
+        <section class="category-block reveal">
+            <div class="category-header">
+                <h3 id="cat-cocktails">COCKTAILS SIGNATURE</h3>
             </div>
-        </article>
-
-        <article class="menu-card reveal">
-            <div class="photo-frame" style="background-image: url('/assets/mojito.webp');"></div>
-            <div class="card-content">
-                <div class="card-title">
-                    <span class="name" id="item-mojito-name">Mojito Cubain</span>
-                    <span class="origin">🍃</span>
-                </div>
-                <p class="description" id="item-mojito-desc">Rhum blanc, menthe fraîche du jardin, citron vert et eau gazeuse.</p>
-            </div>
-        </article>
-
-        <div class="category-header reveal">
-            <h3 id="cat-food">AMUSE-BOUCHES MAISON</h3>
-        </div>
-
-        <div class="items-grid">
-            <article class="menu-card small-card reveal">
-                <div class="photo-frame" style="background-image: url('assets/coxinha.jpg'); height: 160px;"></div>
+            <article class="menu-card">
+                <div class="photo-frame" style="background-image: url('assets/caipirinha.webp');"></div>
                 <div class="card-content">
                     <div class="card-title">
-                        <span class="name" id="item-coxinha-name">Coxinha</span>
-                        <span class="origin">🇧🇷</span>
+                        <span class="name" id="item-caipirinha-name">🍹 Caïpirinha Classique</span>
+                        
                     </div>
-                    <p class="description" id="item-coxinha-desc">Poulet effiloché croustillant.</p>
+                    <p class="description" id="item-caipirinha-desc">Recette traditionnelle : Cachaça, citron vert frais et sucre de canne.</p>
                 </div>
             </article>
-
-            <article class="menu-card small-card reveal">
-                <div class="photo-frame" style="background-image: url('assets/quibe.jpg'); height: 160px;"></div>
+            <article class="menu-card">
+                <div class="photo-frame" style="background-image: url('assets/mojito.webp');"></div>
                 <div class="card-content">
                     <div class="card-title">
-                        <span class="name" id="item-quibe-name">Kébbé</span>
-                        <span class="origin">🇱🇧</span>
+                        <span class="name" id="item-mojito-name">🍃 Mojito Cubain</span>
+                        
                     </div>
-                    <p class="description" id="item-quibe-desc">Bœuf et blé concassé.</p>
+                    <p class="description" id="item-mojito-desc">Rhum blanc, menthe fraîche du jardin, citron vert et eau gazeuse.</p>
                 </div>
             </article>
-        </div>
+        </section>
 
-        <div class="category-header reveal">
-            <h3 id="cat-coffee">CAFÉTÉRIE</h3>
-        </div>
-        <div class="simple-list-card reveal">
-            <div class="list-item">
-                <span id="label-espresso">Espresso</span>
-                <span class="price">2,00€</span>
+        <section class="category-block reveal">
+            <div class="category-header">
+                <h3 id="cat-food">AMUSE-BOUCHES MAISON</h3>
             </div>
-            <div class="list-item">
-                <span id="label-allonge">Café Allongé</span>
-                <span class="price">2,20€</span>
+            <div class="items-grid">
+                <article class="menu-card small-card">
+                    <div class="photo-frame" style="background-image: url('assets/coxinha.jpg');"></div>
+                    <div class="card-content">
+                        <div class="card-title">
+                            <span class="name" id="item-coxinha-name">🍗 Coxinha</span>
+                            
+                        </div>
+                    </div>
+                </article>
+                <article class="menu-card small-card">
+                    <div class="photo-frame" style="background-image: url('assets/quibe.jpg');"></div>
+                    <div class="card-content">
+                        <div class="card-title">
+                            <span class="name" id="item-quibe-name">🧆 Kébbé</span>
+                    
+                        </div>
+                    </div>
+                </article>
             </div>
-            <div class="list-item">
-                <span id="label-capuccino">Capuccino</span>
-                <span class="price">3,50€</span>
-            </div>
-        </div>
+        </section>
 
-        <div class="category-header reveal">
-            <h3 id="cat-drinks">BOISSONS & BIÈRES</h3>
-        </div>
-        <div class="simple-list-card reveal">
-            <div class="list-item">
-                <span id="label-pression">Bière Pression (25cl)</span>
-                <span class="price">3,50€</span>
+        <section class="category-block reveal">
+            <div class="category-header">
+                <h3 id="cat-coffee">CAFÉTÉRIA</h3>
             </div>
-            <div class="list-item">
-                <span id="label-soda">Softs / Sodas</span>
-                <span class="price">3,50€</span>
+            <div class="simple-list-card">
+                <div class="list-item"><span id="label-espresso">☕ Espresso</span><span class="price">1,60€</span></div>
+                <div class="list-item"><span id="label-allonge">☕ Café Allongé</span><span class="price">1,60€</span></div>
+                <div class="list-item"><span id="label-noisette">☕ Café Noisette</span><span class="price">1,80€</span></div>
+                <div class="list-item"><span id="label-chocolat">🍫 Chocolat Chaud</span><span class="price">3,50€</span></div>
+                <div class="list-item"><span id="label-the">🫖 Thé / Infusion</span><span class="price">2,50€</span></div>
             </div>
-            <div class="list-item">
-                <span id="label-water">Eau Minérale</span>
-                <span class="price">2,50€</span>
-            </div>
-        </div>
+        </section>
 
-        <div class="category-header reveal">
-            <h3 id="cat-tabac-games">TABAC & JEUX</h3>
-        </div>
-        <div class="simple-list-card reveal">
-            <div class="list-item">
-                <span id="label-cigarettes">Cigarettes & Tabac</span>
-                <span class="dot">●</span>
+        <section class="category-block reveal">
+            <div class="category-header">
+                <h3 id="cat-drinks">BOISSONS & BIÈRES</h3>
             </div>
-            <div class="list-item">
-                <span id="label-fdj">Jeux FDJ / Grattage</span>
-                <span class="dot">●</span>
+            <div class="simple-list-card">
+                <div class="list-item"><span>🍺 Bière Pression (25cl)</span><span class="price">3,00€</span></div>
+                <div class="list-item"><span>🍺 Bière Pression (50cl)</span><span class="price">6,00€</span></div>
+                <div class="list-item"><span>🍺 Desperados</span><span class="price">3,50€</span></div>
+                <div class="list-item"><span>🍺 Tourtel (Sans Alcool)</span><span class="price">2,50€</span></div>
+                <div class="list-item"><span>🥤 Softs / Sodas</span><span class="price">2,50€</span></div>
+                <div class="list-item"><span>💧 Eau Minérale</span><span class="price">2,00€</span></div>
+                <div class="list-item"><span>🫧 Eau Gazeuse</span><span class="price">2,50€</span></div>
+                <div class="list-item"><span>🥤 Diabolo</span><span class="price">3,50€</span></div>
+                <div class="list-item"><span>🍋 Limonade / Sirop</span><span class="price">2,50€</span></div>
             </div>
-           
-        </div>
+        </section>
+
+        <section class="category-block reveal">
+            <div class="category-header">
+                <h3 id="cat-vins">VINS SÉLECTION</h3>
+            </div>
+            <div class="simple-list-card">
+                <div class="list-item">
+                    <span>🍷 Verre de Vin (Blanc, Rosé, Rouge)</span>
+                    <span class="price">3,00€</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="category-block reveal">
+            <div class="category-header">
+                <h3 id="cat-tabac-games">TABAC & JEUX</h3>
+            </div>
+            <div class="simple-list-card">
+                <div class="list-item"><span>🚬 Cigarettes & Tabac</span><span class="dot">●</span></div>
+                <div class="list-item"><span>🍀 Jeux FDJ / Grattage</span><span class="dot">●</span></div>
+            </div>
+        </section>
 
         <section class="tabac-services reveal">
-            <p class="service-label" id="tabac-label">TABAC •  FDJ</p>
-            <div class="legal-box" id="legal-mineur">INTERDIT AUX MINEURS (-18)</div>
-            <p class="health-warning" id="health-text">Fumer tue. L'abus d'alcool est dangereux pour la santé.</p>
+            <p class="service-label">TABAC • FDJ • PRESSE</p>
+            <div class="legal-box">INTERDIT AUX MINEURS (-18)</div>
+            <p class="health-warning">Fumer tue. L'abus d'alcool est dangereux pour la santé.</p>
         </section>
 
     </main>
 
-    <footer class="footer-legal">
-        <div class="footer-content">
-            <p class="footer-brand"><strong>LE PARC - VALENCE</strong></p>
-            <p class="footer-address">37 Avenue Gambetta, 26000 Valence</p>
-            <p id="footer-hours" class="footer-hours">Ouvert du Mardi au Dimanche</p>
+   <footer class="footer-legal">
+    <div class="footer-content">
+        <p class="footer-brand"><strong>LE PARC - VALENCE</strong></p>
+        <p class="footer-address">37 Avenue Gambetta, 26000 Valence</p>
+        <p id="footer-hours" class="footer-hours">Ouvert du Mardi au Dimanche</p>
+        
+        <hr class="footer-divider">
+
+        <div class="mentions-legales">
+            <p style="font-size: 0.7rem; opacity: 0.6; margin-bottom: 8px;">
+                *Photos non contractuelles - Suggestion de présentation.
+            </p>
             
-            <hr class="footer-divider">
+            <p><strong>Éditeur:</strong> Le Parc Valence | <strong>SIRET:</strong> 502 321 672 00011</p>
+            <p class="privacy-text">Conformément au RGPD, ce site ne collecte aucune donnée personnelle.</p>
+            
+            <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;">
+                © 2026 LE PARC VALENCE. Tous droits réservés.
+            </p>
 
-            <div class="mentions-legales">
-                <p><strong>Éditeur:</strong> Le Parc Valence | <strong>SIRET:</strong> [Seu SIRET Aqui]</p>
-                <p id="footer-privacy-text" class="privacy-text">Conformément au RGPD, ce site ne collecte aucune donnée personnelle.</p>
-            </div>
-
-            <div class="legal-links">
-                <a href="#" id="link-legal">Mentions Légales</a> | 
-                <a href="tel:+33000000000" id="link-contact">Contact</a>
-            </div>
+            <p class="dev-by" style="margin-top: 15px;">
+                Design by <a href="https://ricoborges-dev.vercel.app/" target="_blank">Rico Borges</a>
+            </p>
         </div>
-    </footer>
-<button id="backToTop" class="back-to-top" title="Voltar ao topo">
-    <span class="arrow">↑</span>
-</button>
+
+        <div class="legal-links" style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 25px;">
+            <a href="https://maps.app.goo.gl/E9h8orwtJZ3bQ5AM7" target="_blank" style="display: flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-weight: 600;">
+                <img src="https://www.gstatic.com/images/branding/product/2x/maps_96in128dp.png" alt="Google Maps" style="width: 18px;"> 
+                Localiser
+            </a>
+            <span style="color: var(--gold);">|</span>
+            <a href="mailto:a.saadnia@gmail.com" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fa-solid fa-envelope" style="font-size: 0.9rem;"></i> Contact
+            </a>
+        </div>
+    </div>
+</footer>
+
+    <button id="backToTop" class="back-to-top" title="Haut"><span class="arrow">↑</span></button>
+
     <script src="script.js"></script>
 </body>
 </html>
