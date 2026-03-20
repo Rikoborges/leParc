@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="preload" as="image" href="assets/caipirinha.webp">
 </head>
 <body style="opacity: 0; transition: opacity 0.5s ease-in-out;">
 
@@ -23,19 +24,19 @@
             <div class="divider-gold"></div>
             
             <p class="address">
-                <a href="https://maps.app.goo.gl/E9h8orwtJZ3bQ5AM7" target="_blank" style="text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                    <i class="fa-solid fa-location-dot" style="color: #4285F4;"></i> 37 Av. Gambetta • 26000 Valence
+                <a href="https://maps.app.goo.gl/E9h8orwtJZ3bQ5AM7" target="_blank" rel="noopener noreferrer" aria-label="Voir Le Parc sur Google Maps" style="text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                    <i class="fa-solid fa-location-dot" aria-hidden="true" style="color: #4285F4;"></i> 37 Av. Gambetta • 26000 Valence
                 </a>
             </p>
         </div>
         
-        <nav class="lang-selector">
-            <a href="https://www.facebook.com/profile.php?id=100063325976803" target="_blank" class="social-btn-top">
-                <i class="fab fa-facebook"></i>
+        <nav class="lang-selector" aria-label="Langue et réseaux sociaux">
+            <a href="https://www.facebook.com/profile.php?id=100063325976803" target="_blank" rel="noopener noreferrer" class="social-btn-top" aria-label="Visiter la page Facebook de Le Parc">
+                <i class="fab fa-facebook" aria-hidden="true"></i>
             </a>
-            <button onclick="setLanguage('fr')" class="lang-btn" id="btn-fr">FR 🇫🇷</button>
-            <button onclick="setLanguage('pt')" class="lang-btn" id="btn-pt">PT 🇧🇷</button>
-            <button onclick="setLanguage('ar')" class="lang-btn" id="btn-ar">AR 🇸🇦</button>
+            <button onclick="setLanguage('fr')" class="lang-btn" id="btn-fr" aria-label="Changer la langue en Français">FR 🇫🇷</button>
+            <button onclick="setLanguage('pt')" class="lang-btn" id="btn-pt" aria-label="Mudar idioma para Português">PT 🇧🇷</button>
+            <button onclick="setLanguage('ar')" class="lang-btn" id="btn-ar" aria-label="تغيير اللغة إلى العربية">AR 🇸🇦</button>
         </nav>
     </header>
 
@@ -46,21 +47,19 @@
                 <h3 id="cat-cocktails">COCKTAILS SIGNATURE</h3>
             </div>
             <article class="menu-card">
-                <div class="photo-frame" style="background-image: url('assets/caipirinha.webp');"></div>
+                <div class="photo-frame" role="img" aria-label="Photo de Caïpirinha Classique" style="background-image: url('assets/caipirinha.webp');"></div>
                 <div class="card-content">
                     <div class="card-title">
                         <span class="name" id="item-caipirinha-name">🍹 Caïpirinha Classique</span>
-                        
                     </div>
                     <p class="description" id="item-caipirinha-desc">Recette traditionnelle : Cachaça, citron vert frais et sucre de canne.</p>
                 </div>
             </article>
             <article class="menu-card">
-                <div class="photo-frame" style="background-image: url('assets/mojito.webp');"></div>
+                <div class="photo-frame" role="img" aria-label="Photo de Mojito Cubain" style="background-image: url('assets/mojito.webp');"></div>
                 <div class="card-content">
                     <div class="card-title">
                         <span class="name" id="item-mojito-name">🍃 Mojito Cubain</span>
-                        
                     </div>
                     <p class="description" id="item-mojito-desc">Rhum blanc, menthe fraîche du jardin, citron vert et eau gazeuse.</p>
                 </div>
@@ -73,20 +72,18 @@
             </div>
             <div class="items-grid">
                 <article class="menu-card small-card">
-                    <div class="photo-frame" style="background-image: url('assets/coxinha.jpg');"></div>
+                    <div class="photo-frame" role="img" aria-label="Photo de Coxinha" style="background-image: url('assets/coxinha.jpg');"></div>
                     <div class="card-content">
                         <div class="card-title">
                             <span class="name" id="item-coxinha-name">🍗 Coxinha</span>
-                            
                         </div>
                     </div>
                 </article>
                 <article class="menu-card small-card">
-                    <div class="photo-frame" style="background-image: url('assets/quibe.jpg');"></div>
+                    <div class="photo-frame" role="img" aria-label="Photo de Kébbé" style="background-image: url('assets/quibe.jpg');"></div>
                     <div class="card-content">
                         <div class="card-title">
                             <span class="name" id="item-quibe-name">🧆 Kébbé</span>
-                    
                         </div>
                     </div>
                 </article>
@@ -179,19 +176,19 @@
         </div>
 
         <div class="legal-links" style="display: flex; justify-content: center; align-items: center; gap: 15px; margin-top: 25px;">
-            <a href="https://maps.app.goo.gl/E9h8orwtJZ3bQ5AM7" target="_blank" style="display: flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-weight: 600;">
-                <img src="https://www.gstatic.com/images/branding/product/2x/maps_96in128dp.png" alt="Google Maps" style="width: 18px;"> 
+            <a href="https://maps.app.goo.gl/E9h8orwtJZ3bQ5AM7" target="_blank" rel="noopener noreferrer" aria-label="Localiser Le Parc sur Google Maps" style="display: flex; align-items: center; gap: 6px; color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fa-solid fa-location-dot" aria-hidden="true" style="color: #4285F4; font-size: 1.1rem;"></i>
                 Localiser
             </a>
-            <span style="color: var(--gold);">|</span>
-            <a href="mailto:a.saadnia@gmail.com" style="color: #fff; text-decoration: none; font-weight: 600;">
-                <i class="fa-solid fa-envelope" style="font-size: 0.9rem;"></i> Contact
+            <span style="color: var(--gold);" aria-hidden="true">|</span>
+            <a href="mailto:a.saadnia@gmail.com" aria-label="Envoyer un email à Le Parc" style="color: #fff; text-decoration: none; font-weight: 600;">
+                <i class="fa-solid fa-envelope" aria-hidden="true" style="font-size: 0.9rem;"></i> Contact
             </a>
         </div>
     </div>
 </footer>
 
-    <button id="backToTop" class="back-to-top" title="Haut"><span class="arrow">↑</span></button>
+    <button id="backToTop" class="back-to-top" aria-label="Retour en haut de page"><span class="arrow" aria-hidden="true">↑</span></button>
 
     <script src="script.js"></script>
 </body>
