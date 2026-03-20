@@ -155,9 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLang') || 'fr';
     setLanguage(savedLang);
     
-    // Revela o corpo da página com suavidade
-    document.body.style.opacity = '1';
-    
     revealOnScroll();
 
     // Botão Voltar ao Topo
