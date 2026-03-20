@@ -102,6 +102,7 @@ body {
 }
 
 .lang-btn:active { background: var(--gold); color: var(--primary-brown); }
+.lang-btn.active { background: var(--gold); color: var(--primary-brown); font-weight: 800; }
 
 /* 4. SEÇÕES EM CARDS (NOVO CONCEITO) */
 .menu-container {
