@@ -26,7 +26,7 @@
 
 body {
     background-color: var(--bg-page);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
@@ -43,7 +43,7 @@ body {
 }
 
 .brand-logo {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 3.5rem;
     letter-spacing: 6px;
     margin-bottom: 5px;
@@ -53,9 +53,8 @@ body {
 .subtitle {
     font-size: 0.85rem;
     letter-spacing: 8px;
-    color: var(--white);
+    color: rgba(255, 255, 255, 0.85);
     text-transform: uppercase;
-    opacity: 0.8;
 }
 
 .divider-gold {
