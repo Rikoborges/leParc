@@ -150,12 +150,42 @@ const revealOnScroll = () => {
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 };
 
+/* FAQ ACCORDION */
+function initFaq() {
+    document.querySelectorAll('.faq-question').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            const answerId = btn.getAttribute('aria-controls');
+            const answer = document.getElementById(answerId);
+
+            // Close all other open items first
+            document.querySelectorAll('.faq-question[aria-expanded="true"]').forEach(openBtn => {
+                if (openBtn !== btn) {
+                    openBtn.setAttribute('aria-expanded', 'false');
+                    const openAnswer = document.getElementById(openBtn.getAttribute('aria-controls'));
+                    if (openAnswer) openAnswer.setAttribute('hidden', '');
+                }
+            });
+
+            // Toggle this item
+            if (expanded) {
+                btn.setAttribute('aria-expanded', 'false');
+                answer.setAttribute('hidden', '');
+            } else {
+                btn.setAttribute('aria-expanded', 'true');
+                answer.removeAttribute('hidden');
+            }
+        });
+    });
+}
+
 /* INICIALIZAÇÃO */
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('preferredLang') || 'fr';
     setLanguage(savedLang);
-    
+
     revealOnScroll();
+    initFaq();
 
     // Botão Voltar ao Topo
     const backToTopBtn = document.getElementById('backToTop');
@@ -165,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             backToTopBtn.style.display = 'none';
         }
-    });
+    }, { passive: true });
 
     backToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
