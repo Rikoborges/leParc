@@ -13,7 +13,9 @@ const translations = {
         'cat-tabac-games': 'TABAC & JEUX',
         // Itens de destaque
         'item-caipirinha-name': '🍹 Caïpirinha Classique',
+        'item-caipirinha-desc': 'Recette traditionnelle : Cachaça, citron vert frais et sucre de canne.',
         'item-mojito-name': '🍃 Mojito Cubain',
+        'item-mojito-desc': 'Rhum blanc, menthe fraîche du jardin, citron vert et eau gazeuse.',
         'item-coxinha-name': '🍗 Coxinha',
         'item-quibe-name': '🧆 Kébbé',
         // Lista de Cafetaria
@@ -48,7 +50,9 @@ const translations = {
         'cat-tabac-games': 'TABACO & JOGOS',
         // Itens de destaque
         'item-caipirinha-name': '🍹 Caipirinha Clássica',
+        'item-caipirinha-desc': 'Receita tradicional: Cachaça, limão fresco e açúcar de cana.',
         'item-mojito-name': '🍃 Mojito Cubano',
+        'item-mojito-desc': 'Rum branco, hortelã fresca, limão e água com gás.',
         'item-coxinha-name': '🍗 Coxinha de Frango',
         'item-quibe-name': '🧆 Quibe de Carne',
         // Lista de Cafetaria
@@ -83,7 +87,9 @@ const translations = {
         'cat-tabac-games': 'تبغ وألعاب',
         // Itens
         'item-caipirinha-name': '🍹 كايبيرينيا كلاسيك',
+        'item-caipirinha-desc': 'وصفة تقليدية: كاشاسا، ليمون طازج وسكر قصب.',
         'item-mojito-name': '🍃 موهيتو كوبي',
+        'item-mojito-desc': 'روم أبيض، نعناع طازج، ليمون وماء فوار.',
         'item-coxinha-name': '🍗 كوشينيا دجاج',
         'item-quibe-name': '🧆 كبة لحم',
         // Lista de Cafetaria
