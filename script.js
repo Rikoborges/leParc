@@ -120,23 +120,15 @@ const translations = {
 function setLanguage(lang) {
     localStorage.setItem('preferredLang', lang);
     document.documentElement.lang = lang;
-    
-    // Suporte para leitura da direita para esquerda no Árabe
     document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
 
     Object.keys(translations[lang]).forEach(id => {
         const element = document.getElementById(id);
         if (element) {
-            // Se for o subtítulo principal ou cabeçalhos, usamos animação de fade
-            element.style.opacity = 0;
-            setTimeout(() => {
-                element.textContent = translations[lang][id];
-                element.style.opacity = 1;
-            }, 150);
+            element.textContent = translations[lang][id];
         }
     });
 
-    // Atualiza o estado visual dos botões de idioma
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
     const activeBtn = document.getElementById(`btn-${lang}`);
     if (activeBtn) activeBtn.classList.add('active');
