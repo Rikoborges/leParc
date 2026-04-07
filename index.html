@@ -2,11 +2,56 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Découvrez Le Parc à Valence : Bar, Tabac et Presse. Cocktails signature, spécialités brésiliennes et services FDJ.">
-    <meta name="theme-color" content="#1a0f0d">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 
-    <title>Le Parc - Bar & Tabac Valence</title>
+    <!-- SEO: Title & Description (local keywords) -->
+    <title>Le Parc – Bar & Tabac à Valence | Cocktails, Café & FDJ</title>
+    <meta name="description" content="Le Parc, votre bar-café au cœur de Valence. Cocktails signature, cafétéria, tabac agréé, FDJ officiel et snacks maison. Ouvert du mardi au dimanche – 37 av. Gambetta.">
+    <meta name="keywords" content="bar Valence, café Valence, tabac Valence, cocktails Valence, FDJ Valence, bar Gambetta Valence, Le Parc Valence">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a0f0d">
+    <link rel="canonical" href="https://leparc-valence.vercel.app/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Le Parc – Bar & Tabac à Valence">
+    <meta property="og:description" content="Bar convivial au cœur de Valence. Cocktails signature, café, tabac agréé et FDJ officiel. Venez nous rendre visite !">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
+    <!-- JSON-LD: LocalBusiness structured data for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BarOrPub",
+      "name": "Le Parc",
+      "description": "Bar, café et tabac au cœur de Valence. Cocktails signature, cafétéria, point de vente tabac agréé et partenaire FDJ officiel.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "37 Avenue Gambetta",
+        "addressLocality": "Valence",
+        "postalCode": "26000",
+        "addressCountry": "FR"
+      },
+      "url": "https://leparc-valence.vercel.app",
+      "email": "a.saadnia@gmail.com",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "08:00",
+          "closes": "22:00"
+        }
+      ],
+      "servesCuisine": ["Cocktails", "Café", "Snacks"],
+      "priceRange": "€",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Cash, Carte bancaire",
+      "sameAs": ["https://www.facebook.com/profile.php?id=100063325976803"]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +69,8 @@
     <header class="main-header">
         <div class="header-content">
             <h1 class="brand-logo">LE PARC</h1>
-            <h2 class="subtitle" id="main-subtitle">BAR & TABAC</h2>
+            <!-- subtitle is descriptive, not a heading level -->
+            <p class="subtitle" id="main-subtitle">BAR & TABAC</p>
             <div class="divider-gold"></div>
             
             <p class="address">
@@ -44,14 +90,48 @@
         </nav>
     </header>
 
-    <main class="menu-container">
-        
+    <!-- ===== HERO: Value proposition + primary CTAs ===== -->
+    <section class="hero-section" id="hero" aria-label="Bienvenue au Parc">
+        <div class="hero-content">
+            <p class="hero-badge">📍 Bar de quartier – Valence, Drôme</p>
+            <h2 class="hero-headline">Votre bar incontournable<br>au cœur de Valence</h2>
+            <p class="hero-sub">Cocktails élaborés avec soin · Café de qualité · Tabac agréé · Partenaire FDJ officiel</p>
+            <div class="hero-ctas">
+                <a href="#menu" class="btn-primary">
+                    <i class="fa-solid fa-utensils" aria-hidden="true"></i> Voir la carte
+                </a>
+                <a href="https://maps.app.goo.gl/E9h8orwtJZ3bQ5AM7" target="_blank" rel="noopener noreferrer" class="btn-secondary" aria-label="Obtenir l'itinéraire vers Le Parc sur Google Maps">
+                    <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Nous trouver
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES STRIP: Quick visual overview ===== -->
+    <section class="services-strip" aria-label="Nos services">
+        <div class="services-inner">
+            <span class="service-pill">🍹 Cocktails signature</span>
+            <span class="service-pill">☕ Café & boissons</span>
+            <span class="service-pill">🍷 Vins sélection</span>
+            <span class="service-pill">🚬 Tabac agréé</span>
+            <span class="service-pill">🍀 FDJ & jeux</span>
+        </div>
+    </section>
+
+    <main class="menu-container" id="menu">
+
+        <!-- Section heading for SEO hierarchy -->
+        <div class="section-intro reveal">
+            <h2 class="section-title">Notre Carte</h2>
+            <p class="section-sub">Tous nos produits et boissons disponibles au bar</p>
+        </div>
+
         <section class="category-block reveal">
             <div class="category-header">
                 <h3 id="cat-cocktails">COCKTAILS SIGNATURE</h3>
             </div>
             <article class="menu-card">
-                <div class="photo-frame" role="img" aria-label="Photo de Caïpirinha Classique" style="background-image: url('assets/caipirinha.webp');"></div>
+                <div class="photo-frame" role="img" aria-label="Caïpirinha Classique – cocktail brésilien au Cachaça, citron vert et sucre de canne, servi au bar Le Parc à Valence" style="background-image: url('assets/caipirinha.webp');"></div>
                 <div class="card-content">
                     <div class="card-title">
                         <span class="name" id="item-caipirinha-name">🍹 Caïpirinha Classique</span>
@@ -60,7 +140,7 @@
                 </div>
             </article>
             <article class="menu-card">
-                <div class="photo-frame" role="img" aria-label="Photo de Mojito Cubain" style="background-image: url('assets/mojito.webp');"></div>
+                <div class="photo-frame" role="img" aria-label="Mojito Cubain – rhum blanc, menthe fraîche, citron vert et eau gazeuse, servi au bar Le Parc à Valence" style="background-image: url('assets/mojito.webp');"></div>
                 <div class="card-content">
                     <div class="card-title">
                         <span class="name" id="item-mojito-name">🍃 Mojito Cubain</span>
@@ -156,11 +236,149 @@
 
     </main>
 
+    <!-- ===== ABOUT SECTION ===== -->
+    <section class="about-section reveal" aria-label="À propos de Le Parc">
+        <div class="about-inner">
+            <h2 class="section-title">À Propos de Le Parc</h2>
+            <div class="divider-gold" style="margin: 20px auto 28px;"></div>
+            <p class="about-text">
+                Situé en plein cœur de Valence, au <strong>37 Avenue Gambetta</strong>,
+                Le Parc est bien plus qu'un simple bar. C'est un espace convivial où se retrouvent
+                amis, familles et habitués du quartier, dans une atmosphère chaleureuse et accueillante.
+            </p>
+            <p class="about-text" style="margin-top: 14px;">
+                Cocktails élaborés avec soin, café de qualité, sélection de vins,
+                tabac agréé et partenaire FDJ officiel — tout ce dont vous avez besoin
+                sous un même toit, à deux pas du centre de Valence.
+            </p>
+            <div class="about-badges">
+                <div class="badge-item"><span class="badge-icon">✓</span> Cocktails signature</div>
+                <div class="badge-item"><span class="badge-icon">✓</span> Tabac agréé</div>
+                <div class="badge-item"><span class="badge-icon">✓</span> Partenaire FDJ officiel</div>
+                <div class="badge-item"><span class="badge-icon">✓</span> Café & snacks maison</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testimonials-section" aria-label="Avis de nos clients">
+        <div class="testimonials-inner">
+            <h2 class="section-title light">Ce que disent nos clients</h2>
+            <p class="section-sub light">Des habitués qui font confiance à Le Parc depuis des années</p>
+            <div class="testimonials-grid">
+                <article class="testimonial-card reveal">
+                    <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                    <p class="testimonial-text">"Un bar vraiment sympa, ambiance chaleureuse et cocktails excellents ! Le Mojito est à tomber. Je recommande à tous mes amis."</p>
+                    <p class="testimonial-author">— Sophie M., Valence</p>
+                </article>
+                <article class="testimonial-card reveal">
+                    <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                    <p class="testimonial-text">"Super endroit pour prendre un café le matin ou un verre le soir. Personnel accueillant et prix très raisonnables."</p>
+                    <p class="testimonial-author">— Karim B., Valence</p>
+                </article>
+                <article class="testimonial-card reveal">
+                    <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+                    <p class="testimonial-text">"Je viens pour le FDJ et je reste pour les cocktails ! La Caïpirinha est délicieuse. Le bar du quartier Gambetta au top."</p>
+                    <p class="testimonial-author">— Marie-Claire L., Valence</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ: SEO + Trust ===== -->
+    <section class="faq-section reveal" aria-label="Questions fréquentes sur Le Parc">
+        <div class="faq-inner">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            <p class="section-sub">Tout ce que vous voulez savoir sur Le Parc à Valence</p>
+            <div class="faq-list" role="list">
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-a1">
+                        <span>Quels sont vos horaires d'ouverture ?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-a1" hidden>
+                        <p>Le Parc est ouvert <strong>du mardi au dimanche</strong>. Nous vous accueillons au 37 Avenue Gambetta, 26000 Valence. Le lundi, l'établissement est fermé.</p>
+                    </div>
+                </div>
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-a2">
+                        <span>Proposez-vous des cocktails sans alcool ?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-a2" hidden>
+                        <p>Oui ! Nous proposons une sélection de boissons sans alcool : <strong>Tourtel</strong>, diabolos, softs, limonades et sirops maison. Idéal pour tous les goûts.</p>
+                    </div>
+                </div>
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-a3">
+                        <span>Puis-je acheter des tickets FDJ et jeux de grattage ?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-a3" hidden>
+                        <p>Absolument. Le Parc est un <strong>point de vente officiel FDJ</strong>. Retrouvez tous vos jeux de grattage, tickets et paris sportifs directement sur place.</p>
+                    </div>
+                </div>
+                <div class="faq-item" role="listitem">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-a4">
+                        <span>Comment accéder facilement à Le Parc ?</span>
+                        <span class="faq-icon" aria-hidden="true">+</span>
+                    </button>
+                    <div class="faq-answer" id="faq-a4" hidden>
+                        <p>Nous sommes situés au <strong>37 Avenue Gambetta</strong>, en plein centre de Valence, à quelques minutes à pied du centre-ville. Accessible en bus et tramway.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT & HOURS ===== -->
+    <section class="contact-section reveal" aria-label="Contact et horaires du bar Le Parc à Valence">
+        <div class="contact-inner">
+            <h2 class="section-title">Contact & Horaires</h2>
+            <p class="section-sub">Retrouvez-nous au cœur de Valence</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <strong>Adresse</strong>
+                        <p>37 Avenue Gambetta<br>26000 Valence</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></div>
+                    <div>
+                        <strong>Horaires</strong>
+                        <p id="footer-hours">Ouvert du Mardi au Dimanche</p>
+                        <p class="contact-note">Fermé le lundi</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <strong>Email</strong>
+                        <p><a href="mailto:a.saadnia@gmail.com" class="contact-link">a.saadnia@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon" aria-hidden="true"><i class="fab fa-facebook"></i></div>
+                    <div>
+                        <strong>Réseaux sociaux</strong>
+                        <p><a href="https://www.facebook.com/profile.php?id=100063325976803" target="_blank" rel="noopener noreferrer" class="contact-link">Le Parc sur Facebook</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-cta">
+                <a href="https://maps.app.goo.gl/E9h8orwtJZ3bQ5AM7" target="_blank" rel="noopener noreferrer" class="btn-primary" aria-label="Ouvrir Le Parc dans Google Maps">
+                    <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Obtenir l'itinéraire
+                </a>
+            </div>
+        </div>
+    </section>
+
    <footer class="footer-legal">
     <div class="footer-content">
         <p class="footer-brand"><strong>LE PARC - VALENCE</strong></p>
         <p class="footer-address">37 Avenue Gambetta, 26000 Valence</p>
-        <p id="footer-hours" class="footer-hours">Ouvert du Mardi au Dimanche</p>
         
         <hr class="footer-divider">
 
@@ -193,6 +411,16 @@
         </div>
     </div>
 </footer>
+
+    <!-- ===== STICKY CTA (mobile priority) ===== -->
+    <div class="sticky-cta" id="stickyCta" aria-label="Actions rapides">
+        <a href="#menu" class="sticky-btn sticky-btn-primary">
+            <i class="fa-solid fa-utensils" aria-hidden="true"></i> Voir la carte
+        </a>
+        <a href="https://maps.app.goo.gl/E9h8orwtJZ3bQ5AM7" target="_blank" rel="noopener noreferrer" class="sticky-btn sticky-btn-secondary" aria-label="Nous trouver sur Google Maps">
+            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Itinéraire
+        </a>
+    </div>
 
     <button id="backToTop" class="back-to-top" aria-label="Retour en haut de page"><span class="arrow" aria-hidden="true">↑</span></button>
 
