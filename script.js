@@ -37,7 +37,8 @@ const translations = {
         // Outros
         'label-cigarettes': '🚬 Cigarettes & Tabac',
         'label-fdj': '🍀 Jeux FDJ / Grattage',
-        'tabac-label': 'TABAC • FDJ • PRESSE',
+        'label-vapes': '💨 Vapes / CBD / Puffs',
+        'tabac-label': 'TABAC • FDJ',
         'footer-hours': 'Ouvert du Mardi au Dimanche'
     },
     pt: {
@@ -74,7 +75,8 @@ const translations = {
         // Outros
         'label-cigarettes': '🚬 Cigarros & Tabaco',
         'label-fdj': '🍀 Jogos FDJ / Raspadinhas',
-        'tabac-label': 'TABACO • FDJ • IMPRENSA',
+        'label-vapes': '💨 Vapes / CBD / Puffs',
+        'tabac-label': 'TABACO • FDJ',
         'footer-hours': 'Aberto de Terça a Domingo'
     },
     ar: {
@@ -111,7 +113,8 @@ const translations = {
         // Outros
         'label-cigarettes': '🚬 سجائر وتبغ',
         'label-fdj': '🍀 ألعاب الحظ',
-        'tabac-label': 'تبغ • ألعاب • صحف',
+        'label-vapes': '💨 Vapes / CBD / Puffs',
+        'tabac-label': 'تبغ • ألعاب',
         'footer-hours': 'مفتوح من الثلاثاء إلى الأحد'
     }
 };
