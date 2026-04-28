@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>DP – Extraits de code – Le Parc</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    background: #f5f5f5;
+    color: #1a1a1a;
+    padding: 40px 30px;
+  }
+
+  /* ---- En-tête du document ---- */
+  .doc-header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 24px;
+    border-bottom: 3px solid #d4af37;
+  }
+
+  .doc-header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #1a0f0d;
+    margin-bottom: 6px;
+  }
+
+  .doc-header p {
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  .doc-header .badge {
+    display: inline-block;
+    background: #1a0f0d;
+    color: #d4af37;
+    padding: 4px 14px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ---- Bloc de chaque extrait ---- */
+  .extrait {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid #e8e8e8;
+    page-break-inside: avoid;
+  }
+
+  .extrait-header {
+    background: #1a0f0d;
+    color: #d4af37;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .extrait-num {
+    background: #d4af37;
+    color: #1a0f0d;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  .extrait-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .extrait-file {
+    font-size: 0.72rem;
+    color: rgba(212,175,55,0.6);
+    margin-left: auto;
+    font-family: 'Fira Code', monospace;
+  }
+
+  .extrait-desc {
+    padding: 14px 24px 10px;
+    font-size: 0.82rem;
+    color: #555;
+    background: #fafafa;
+    border-bottom: 1px solid #eee;
+    line-height: 1.55;
+  }
+
+  /* ---- Bloc de code (style VS Code Dark) ---- */
+  .code-block {
+    background: #1e1e1e;
+    padding: 24px;
+    overflow-x: auto;
+  }
+
+  pre {
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.78rem;
+    line-height: 1.75;
+    color: #d4d4d4;
+    white-space: pre;
+  }
+
+  /* Couleurs syntaxiques */
+  .cm  { color: #6a9955; font-style: italic; } /* commentaire */
+  .tg  { color: #569cd6; }                      /* balise HTML */
+  .at  { color: #9cdcfe; }                      /* attribut */
+  .vl  { color: #ce9178; }                      /* valeur */
+  .kw  { color: #c586c0; }                      /* mot-clé CSS */
+  .sl  { color: #4ec9b0; }                      /* sélecteur CSS */
+  .pr  { color: #9cdcfe; }                      /* propriété CSS */
+  .nb  { color: #b5cea8; }                      /* nombre */
+  .tx  { color: #d4d4d4; }                      /* texte normal */
+
+  /* ---- Légende des points-clés ---- */
+  .points {
+    padding: 14px 24px 18px;
+    background: #fff;
+    border-top: 1px solid #eee;
+  }
+
+  .points ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .points li {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #333;
+    font-family: 'Fira Code', monospace;
+  }
+
+  .points-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* ---- Impression ---- */
+  @media print {
+    body { background: #fff; padding: 20px; }
+    .extrait { box-shadow: none; border: 1px solid #ccc; }
+    .no-print { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ======== EN-TÊTE ======== -->
+<div class="doc-header">
+  <h1>Extraits de code – Site Web Le Parc</h1>
+  <p>Dossier Professionnel · Développement Front-End</p>
+  <span class="badge">HTML5 · CSS3 · Accessibilité · Responsive</span>
+</div>
+
+
+<!-- ======================================================
+     EXTRAIT 1 — STRUCTURE HTML5 SÉMANTIQUE
+     ====================================================== -->
+<div class="extrait">
+  <div class="extrait-header">
+    <div class="extrait-num">1</div>
+    <span class="extrait-title">Structure HTML5 Sémantique</span>
+    <span class="extrait-file">index.html</span>
+  </div>
+  <div class="extrait-desc">
+    La page utilise des balises sémantiques HTML5 pour structurer le contenu de façon logique et lisible par les moteurs de recherche. Chaque section possède un rôle précis : <strong>&lt;header&gt;</strong> pour l'en-tête, <strong>&lt;nav&gt;</strong> pour la navigation, <strong>&lt;main&gt;</strong> pour le contenu principal, <strong>&lt;section&gt;</strong> pour chaque bloc thématique et <strong>&lt;article&gt;</strong> pour chaque carte produit.
+  </div>
+  <div class="code-block"><pre><span class="cm">&lt;!-- ========== EN-TÊTE PRINCIPAL DU SITE ========== --&gt;</span>
+<span class="tg">&lt;header</span> <span class="at">class</span>=<span class="vl">"main-header"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;h1</span> <span class="at">class</span>=<span class="vl">"brand-logo"</span><span class="tg">&gt;</span>LE PARC<span class="tg">&lt;/h1&gt;</span>
+    <span class="tg">&lt;p</span> <span class="at">class</span>=<span class="vl">"subtitle"</span><span class="tg">&gt;</span>BAR &amp; TABAC<span class="tg">&lt;/p&gt;</span>
+
+    <span class="cm">&lt;!-- Navigation : sélecteur de langue + réseau social --&gt;</span>
+    <span class="tg">&lt;nav</span> <span class="at">class</span>=<span class="vl">"lang-selector"</span><span class="tg">&gt;</span>
+        <span class="tg">&lt;button&gt;</span>FR 🇫🇷<span class="tg">&lt;/button&gt;</span>
+        <span class="tg">&lt;button&gt;</span>PT 🇧🇷<span class="tg">&lt;/button&gt;</span>
+        <span class="tg">&lt;button&gt;</span>AR 🇸🇦<span class="tg">&lt;/button&gt;</span>
+    <span class="tg">&lt;/nav&gt;</span>
+<span class="tg">&lt;/header&gt;</span>
+
+<span class="cm">&lt;!-- Section hero : accroche principale de la page --&gt;</span>
+<span class="tg">&lt;section</span> <span class="at">class</span>=<span class="vl">"hero-section"</span> <span class="at">id</span>=<span class="vl">"hero"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;h2&gt;</span>Votre bar incontournable au cœur de Valence<span class="tg">&lt;/h2&gt;</span>
+    <span class="tg">&lt;a</span> <span class="at">href</span>=<span class="vl">"#menu"</span><span class="tg">&gt;</span>Voir la carte<span class="tg">&lt;/a&gt;</span>
+<span class="tg">&lt;/section&gt;</span>
+
+<span class="cm">&lt;!-- Contenu principal : la carte du bar --&gt;</span>
+<span class="tg">&lt;main</span> <span class="at">class</span>=<span class="vl">"menu-container"</span> <span class="at">id</span>=<span class="vl">"menu"</span><span class="tg">&gt;</span>
+
+    <span class="cm">&lt;!-- Bloc thématique : cocktails signature --&gt;</span>
+    <span class="tg">&lt;section</span> <span class="at">class</span>=<span class="vl">"category-block"</span><span class="tg">&gt;</span>
+        <span class="tg">&lt;h3&gt;</span>COCKTAILS SIGNATURE<span class="tg">&lt;/h3&gt;</span>
+
+        <span class="cm">&lt;!-- article = unité de contenu indépendante (carte produit) --&gt;</span>
+        <span class="tg">&lt;article</span> <span class="at">class</span>=<span class="vl">"menu-card"</span><span class="tg">&gt;</span>
+            <span class="tg">&lt;div</span> <span class="at">class</span>=<span class="vl">"photo-frame"</span><span class="tg">&gt;&lt;/div&gt;</span>
+            <span class="tg">&lt;div</span> <span class="at">class</span>=<span class="vl">"card-content"</span><span class="tg">&gt;</span>
+                <span class="tg">&lt;span&gt;</span>🍹 Caïpirinha Classique<span class="tg">&lt;/span&gt;</span>
+            <span class="tg">&lt;/div&gt;</span>
+        <span class="tg">&lt;/article&gt;</span>
+    <span class="tg">&lt;/section&gt;</span>
+
+<span class="tg">&lt;/main&gt;</span>
+
+<span class="cm">&lt;!-- Pied de page : mentions légales et informations RGPD --&gt;</span>
+<span class="tg">&lt;footer</span> <span class="at">class</span>=<span class="vl">"footer-legal"</span><span class="tg">&gt;</span>
+    <span class="tg">&lt;p&gt;</span>© 2026 LE PARC VALENCE. Tous droits réservés.<span class="tg">&lt;/p&gt;</span>
+    <span class="tg">&lt;p</span> <span class="at">class</span>=<span class="vl">"privacy-text"</span><span class="tg">&gt;</span>
+        Conformément au RGPD, ce site ne collecte aucune donnée personnelle.
+    <span class="tg">&lt;/p&gt;</span>
+<span class="tg">&lt;/footer&gt;</span></pre></div>
+  <div class="points">
+    <span class="points-label">Balises utilisées</span>
+    <ul>
+      <li>&lt;header&gt;</li>
+      <li>&lt;nav&gt;</li>
+      <li>&lt;section&gt;</li>
+      <li>&lt;main&gt;</li>
+      <li>&lt;article&gt;</li>
+      <li>&lt;footer&gt;</li>
+      <li>&lt;h1&gt; → &lt;h3&gt;</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ======================================================
+     EXTRAIT 2 — ACCESSIBILITÉ (ARIA)
+     ====================================================== -->
+<div class="extrait">
+  <div class="extrait-header">
+    <div class="extrait-num">2</div>
+    <span class="extrait-title">Accessibilité – Attributs ARIA</span>
+    <span class="extrait-file">index.html</span>
+  </div>
+  <div class="extrait-desc">
+    Pour rendre le site accessible aux utilisateurs de lecteurs d'écran, j'ai ajouté des attributs ARIA sur l'ensemble des éléments interactifs et décoratifs. <strong>aria-label</strong> décrit l'action de chaque bouton, <strong>aria-hidden="true"</strong> masque les icônes décoratives, et <strong>aria-expanded / aria-controls</strong> rendent la FAQ entièrement navigable au clavier.
+  </div>
+  <div class="code-block"><pre><span class="cm">&lt;!-- Navigation : aria-label décrit la zone pour les lecteurs d'écran --&gt;</span>
+<span class="tg">&lt;nav</span> <span class="at">aria-label</span>=<span class="vl">"Langue et réseaux sociaux"</span><span class="tg">&gt;</span>
+
+    <span class="cm">&lt;!-- Lien réseau social : libellé explicite pour les non-voyants --&gt;</span>
+    <span class="tg">&lt;a</span> <span class="at">href</span>=<span class="vl">"https://facebook.com/..."</span>
+       <span class="at">aria-label</span>=<span class="vl">"Visiter la page Facebook de Le Parc"</span><span class="tg">&gt;</span>
+        <span class="cm">&lt;!-- aria-hidden : l'icône est décorative, on la masque aux lecteurs d'écran --&gt;</span>
+        <span class="tg">&lt;i</span> <span class="at">class</span>=<span class="vl">"fab fa-facebook"</span> <span class="at">aria-hidden</span>=<span class="vl">"true"</span><span class="tg">&gt;&lt;/i&gt;</span>
+    <span class="tg">&lt;/a&gt;</span>
+
+    <span class="cm">&lt;!-- Boutons de langue : chaque bouton a un label dans sa propre langue --&gt;</span>
+    <span class="tg">&lt;button</span> <span class="at">aria-label</span>=<span class="vl">"Changer la langue en Français"</span><span class="tg">&gt;</span>FR 🇫🇷<span class="tg">&lt;/button&gt;</span>
+    <span class="tg">&lt;button</span> <span class="at">aria-label</span>=<span class="vl">"Mudar idioma para Português"</span><span class="tg">&gt;</span>PT 🇧🇷<span class="tg">&lt;/button&gt;</span>
+    <span class="tg">&lt;button</span> <span class="at">aria-label</span>=<span class="vl">"تغيير اللغة إلى العربية"</span><span class="tg">&gt;</span>AR 🇸🇦<span class="tg">&lt;/button&gt;</span>
+<span class="tg">&lt;/nav&gt;</span>
+
+<span class="cm">&lt;!-- Section avec un libellé de zone explicite --&gt;</span>
+<span class="tg">&lt;section</span> <span class="at">class</span>=<span class="vl">"faq-section"</span>
+          <span class="at">aria-label</span>=<span class="vl">"Questions fréquentes sur Le Parc"</span><span class="tg">&gt;</span>
+
+    <span class="cm">&lt;!-- FAQ interactive : aria-expanded indique si la réponse est ouverte --&gt;</span>
+    <span class="tg">&lt;button</span> <span class="at">class</span>=<span class="vl">"faq-question"</span>
+            <span class="at">aria-expanded</span>=<span class="vl">"false"</span>
+            <span class="at">aria-controls</span>=<span class="vl">"faq-a1"</span><span class="tg">&gt;</span>
+        <span class="tg">&lt;span&gt;</span>Quels sont vos horaires d'ouverture ?<span class="tg">&lt;/span&gt;</span>
+        <span class="cm">&lt;!-- Icône décorative masquée aux lecteurs d'écran --&gt;</span>
+        <span class="tg">&lt;span</span> <span class="at">class</span>=<span class="vl">"faq-icon"</span> <span class="at">aria-hidden</span>=<span class="vl">"true"</span><span class="tg">&gt;</span>+<span class="tg">&lt;/span&gt;</span>
+    <span class="tg">&lt;/button&gt;</span>
+
+    <span class="cm">&lt;!-- Réponse liée au bouton via aria-controls / id --&gt;</span>
+    <span class="tg">&lt;div</span> <span class="at">class</span>=<span class="vl">"faq-answer"</span> <span class="at">id</span>=<span class="vl">"faq-a1"</span> <span class="at">hidden</span><span class="tg">&gt;</span>
+        <span class="tg">&lt;p&gt;</span>Le Parc est ouvert du mardi au dimanche.<span class="tg">&lt;/p&gt;</span>
+    <span class="tg">&lt;/div&gt;</span>
+
+<span class="tg">&lt;/section&gt;</span></pre></div>
+  <div class="points">
+    <span class="points-label">Attributs ARIA utilisés</span>
+    <ul>
+      <li>aria-label</li>
+      <li>aria-hidden="true"</li>
+      <li>aria-expanded</li>
+      <li>aria-controls</li>
+      <li>role="img"</li>
+      <li>role="list"</li>
+    </ul>
+  </div>
+</div>
+
+
+<!-- ======================================================
+     EXTRAIT 3 — RESPONSIVE DESIGN (MEDIA QUERIES)
+     ====================================================== -->
+<div class="extrait">
+  <div class="extrait-header">
+    <div class="extrait-num">3</div>
+    <span class="extrait-title">Responsive Design – Media Queries CSS</span>
+    <span class="extrait-file">style.css</span>
+  </div>
+  <div class="extrait-desc">
+    Le site s'adapte à tous les écrans grâce à la balise <strong>&lt;meta name="viewport"&gt;</strong> et à trois points de rupture CSS. Sur mobile, la barre CTA fixe s'affiche en bas, les grilles passent en colonne unique et les boutons occupent toute la largeur disponible.
+  </div>
+  <div class="code-block"><pre><span class="cm">/* Viewport : adapte le rendu à la taille réelle de l'écran mobile */</span>
+<span class="cm">/* &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; */</span>
+
+<span class="cm">/* ================================================
+   RESPONSIVE OVERRIDES – 3 points de rupture
+   ================================================ */</span>
+
+<span class="cm">/* --- Desktop (≥ 768px) : masquer la barre CTA fixe du mobile --- */</span>
+<span class="kw">@media</span> (<span class="pr">min-width</span>: <span class="nb">768px</span>) {
+    <span class="sl">.sticky-cta</span> {
+        <span class="pr">display</span>: none;     <span class="cm">/* barre fixe inutile sur grand écran */</span>
+    }
+    <span class="sl">body</span> {
+        <span class="pr">padding-bottom</span>: <span class="nb">0</span>;  <span class="cm">/* supprime l'espace réservé à la barre */</span>
+    }
+}
+
+<span class="cm">/* --- Tablette (≤ 768px) : grille en colonne unique --- */</span>
+<span class="kw">@media</span> (<span class="pr">max-width</span>: <span class="nb">768px</span>) {
+    <span class="sl">.testimonials-grid</span> {
+        <span class="pr">grid-template-columns</span>: <span class="nb">1fr</span>;  <span class="cm">/* 3 colonnes → 1 colonne */</span>
+        <span class="pr">max-width</span>: <span class="nb">420px</span>;
+        <span class="pr">margin</span>: auto;
+    }
+    <span class="sl">.contact-grid</span> {
+        <span class="pr">grid-template-columns</span>: <span class="nb">1fr</span>;  <span class="cm">/* 2 colonnes → 1 colonne */</span>
+    }
+    <span class="sl">.hero-headline</span> {
+        <span class="pr">font-size</span>: <span class="nb">1.85rem</span>;          <span class="cm">/* titre réduit pour tablette */</span>
+    }
+}
+
+<span class="cm">/* --- Mobile (≤ 480px) : boutons pleine largeur, titres compacts --- */</span>
+<span class="kw">@media</span> (<span class="pr">max-width</span>: <span class="nb">480px</span>) {
+    <span class="sl">.hero-headline</span> {
+        <span class="pr">font-size</span>: <span class="nb">1.55rem</span>;          <span class="cm">/* titre encore plus compact */</span>
+    }
+    <span class="sl">.hero-ctas</span> {
+        <span class="pr">flex-direction</span>: column;      <span class="cm">/* boutons empilés verticalement */</span>
+        <span class="pr">align-items</span>: center;
+    }
+    <span class="sl">.btn-primary</span>,
+    <span class="sl">.btn-secondary</span> {
+        <span class="pr">width</span>: <span class="nb">100%</span>;                <span class="cm">/* pleine largeur sur petit écran */</span>
+        <span class="pr">max-width</span>: <span class="nb">280px</span>;
+        <span class="pr">justify-content</span>: center;
+    }
+    <span class="sl">.about-badges</span> {
+        <span class="pr">grid-template-columns</span>: <span class="nb">1fr</span>;  <span class="cm">/* 2 badges → 1 par ligne */</span>
+    }
+}</pre></div>
+  <div class="points">
+    <span class="points-label">Points de rupture</span>
+    <ul>
+      <li>min-width: 768px → Desktop</li>
+      <li>max-width: 768px → Tablette</li>
+      <li>max-width: 480px → Mobile</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>
